@@ -1,13 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -18,12 +26,26 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -35,13 +57,31 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <_ProjectFileVersion>16.0.28916.169</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -53,6 +93,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <DisableSpecificWarnings>4068;4018;4800;4996;4267;4244;4312;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -79,73 +120,125 @@
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
     </Lib>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Sources_Common\i18n;$(ProjectDir)..\..\Sources_Common\i18n\Charsets;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters\OneByte;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters\Unicode;$(ProjectDir)..\..\Sources_Common\Mail\URLs;$(ProjectDir)..\..\Sources_Common\Utilities;$(ProjectDir)..\..\Win32\Sources\VCPP;$(ProjectDir)..\CRAM-MD5\sources\md5;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4068;4018;4800;4996;4267;4244;4312;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>Plugin_Prefix_Win32.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(ProjectDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Sources_Common\i18n;$(ProjectDir)..\..\Sources_Common\i18n\Charsets;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters\OneByte;$(ProjectDir)..\..\Sources_Common\i18n\Charsets\Converters\Unicode;$(ProjectDir)..\..\Sources_Common\Mail\URLs;$(ProjectDir)..\..\Sources_Common\Utilities;$(ProjectDir)..\..\Win32\Sources\VCPP;$(ProjectDir)..\CRAM-MD5\sources\md5;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4068;4018;4800;4996;4267;4244;4312;4309;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>Plugin_Prefix_Win32.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(ProjectDir)$(Platform)\$(Configuration)\$(ProjectName).lib</OutputFile>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
+  </ItemDefinitionGroup>
   <ItemGroup>
-    <CLCompile Include="..\..\Sources_Common\Utilities\base64.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CASCII.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\CCharsetManager.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\CCharSpecials.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\CConverterBase.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CConverterOneByte.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\cdstring.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\cdustring.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\char_stream.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\CStringUtils.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS2.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS4.cp" />
-    <CLCompile Include="..\..\Sources_Common\Mail\URLs\CURL.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\CUStringUtils.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF16.cp" />
-    <CLCompile Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF8.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\diriterator.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\encrypt.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\CCharsetManager.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\CConverterBase.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CASCII.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CConverterOneByte.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS2.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS4.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF16.cp" />
+    <None Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF8.cp" />
+    <None Include="..\..\Sources_Common\Mail\URLs\CURL.cp" />
+    <None Include="..\..\Sources_Common\Utilities\base64.cp" />
+    <None Include="..\..\Sources_Common\Utilities\CCharSpecials.cp" />
+    <None Include="..\..\Sources_Common\Utilities\cdstring.cp" />
+    <None Include="..\..\Sources_Common\Utilities\cdustring.cp" />
+    <None Include="..\..\Sources_Common\Utilities\char_stream.cp" />
+    <None Include="..\..\Sources_Common\Utilities\CStringUtils.cp" />
+    <None Include="..\..\Sources_Common\Utilities\CUStringUtils.cp" />
+    <None Include="..\..\Sources_Common\Utilities\diriterator.cp" />
+    <None Include="..\..\Sources_Common\Utilities\encrypt.cp" />
+    <None Include="..\..\Sources_Common\Utilities\quotedprintable.cp" />
+    <None Include="..\..\Sources_Common\Utilities\strfind.cp" />
+    <None Include="..\..\Sources_Common\Utilities\ustrfind.cp" />
     <ClCompile Include="..\Common\MulberryPrefixWin32.cp">
-      <FileType>Document</FileType>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">__VCPP__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Plugin_Prefix_Win32.h</PrecompiledHeaderFile>
     </ClCompile>
-    <CLCompile Include="..\Common\os_dep.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\quotedprintable.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\strfind.cp" />
-    <CLCompile Include="..\..\Sources_Common\Utilities\ustrfind.cp" />
-    <None Include="ReadMe.txt" />
+    <None Include="..\Common\os_dep.cp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Sources_Common\Utilities\base64.h" />
-    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CASCII.h" />
     <ClInclude Include="..\..\Sources_Common\i18n\Charsets\CCharsetManager.h" />
-    <ClInclude Include="..\..\Sources_Common\Utilities\CCharSpecials.h" />
     <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\CConverterBase.h" />
+    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CASCII.h" />
     <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\OneByte\CConverterOneByte.h" />
-    <ClInclude Include="..\Sources_Common\Utilities\cdstring.h" />
+    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS2.h" />
+    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS4.h" />
+    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF16.h" />
+    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF8.h" />
+    <ClInclude Include="..\..\Sources_Common\Mail\URLs\CURL.h" />
+    <ClInclude Include="..\..\Sources_Common\Utilities\base64.h" />
+    <ClInclude Include="..\..\Sources_Common\Utilities\CCharSpecials.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\cdustring.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\char_stream.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\CStringUtils.h" />
-    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS2.h" />
-    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUCS4.h" />
-    <ClInclude Include="..\..\Sources_Common\Mail\URLs\CURL.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\CUStringUtils.h" />
-    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF16.h" />
-    <ClInclude Include="..\..\Sources_Common\i18n\Charsets\Converters\Unicode\CUTF8.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\diriterator.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\encrypt.h" />
-    <ClInclude Include="..\Common\Mac2Win.h" />
-    <ClInclude Include="..\CRAM-MD5\sources\md5\md5.h" />
-    <ClInclude Include="..\Common\os_dep.h" />
-    <ClInclude Include="..\Common\Plugin_Prefix_Win32.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\quotedprintable.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\strfind.h" />
     <ClInclude Include="..\..\Sources_Common\Utilities\ustrfind.h" />
+    <ClInclude Include="..\Common\Mac2Win.h" />
+    <ClInclude Include="..\Common\os_dep.h" />
+    <ClInclude Include="..\Common\Plugin_Prefix_Win32.h" />
+    <ClInclude Include="..\CRAM-MD5\sources\md5\md5.h" />
+    <ClInclude Include="..\Sources_Common\Utilities\cdstring.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CRAM-MD5\sources\md5\md5c.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsCpp</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

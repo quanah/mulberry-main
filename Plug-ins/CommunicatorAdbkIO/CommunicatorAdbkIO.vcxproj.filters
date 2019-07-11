@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CLCompile Include="..\Common\CAdbkIOPluginDLL.cp">
+    <None Include="..\Common\CAdbkIOPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CCommAdbkIOPluginDLL.cp">
+    </None>
+    <None Include="sources\CCommAdbkIOPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\CPluginDLL.cp">
+    </None>
+    <None Include="..\Common\CPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\PluginDLLmain.cp">
+    </None>
+    <None Include="..\Common\PluginDLLmain.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\line64win.c">

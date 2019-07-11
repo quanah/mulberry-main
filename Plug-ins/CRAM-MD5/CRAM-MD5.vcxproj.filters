@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CLCompile Include="..\Common\CAuthPluginDLL.cp">
+    <None Include="..\Common\CAuthPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CCRAMMD5PluginDLL.cp">
+    </None>
+    <None Include="sources\CCRAMMD5PluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\CPluginDLL.cp">
+    </None>
+    <None Include="..\Common\CPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\kbase64.cp">
+    </None>
+    <None Include="..\Common\kbase64.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\PluginDLLmain.cp">
+    </None>
+    <None Include="..\Common\PluginDLLmain.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sources\md5\hmac-md5.c">

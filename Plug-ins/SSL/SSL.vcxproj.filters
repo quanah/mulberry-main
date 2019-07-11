@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CLCompile Include="..\Common\CPluginDLL.cp">
+    <None Include="..\Common\CPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CSSLPluginDLL.cp">
+    </None>
+    <None Include="sources\CSSLPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\os_dep.cp">
+    </None>
+    <None Include="..\Common\os_dep.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\PluginDLLmain.cp">
+    </None>
+    <None Include="..\Common\PluginDLLmain.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
+    </None>
     <None Include="SSL.def">
       <Filter>Source Files</Filter>
     </None>

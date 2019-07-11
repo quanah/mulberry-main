@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CLCompile Include="..\Common\CAdbkIOPluginDLL.cp">
+    <None Include="..\Common\CAdbkIOPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\CPluginDLL.cp">
+    </None>
+    <None Include="..\Common\CPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CVCard.cp">
+    </None>
+    <None Include="sources\CVCard.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CVCardAdbkIOPluginDLL.cp">
+    </None>
+    <None Include="sources\CVCardAdbkIOPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CVCardEngine.cp">
+    </None>
+    <None Include="sources\CVCardEngine.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\PluginDLLmain.cp">
+    </None>
+    <None Include="..\Common\PluginDLLmain.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Common\CAdbkIOPluginDLL.h">

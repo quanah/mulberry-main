@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CLCompile Include="..\..\Sources_Common\Plugins\SSL\CDLLFunctions.cp">
+    <None Include="..\..\Sources_Common\Plugins\SSL\CDLLFunctions.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\CPluginDLL.cp">
+    </None>
+    <None Include="..\Common\CPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\CSecurityPluginDLL.cp">
+    </None>
+    <None Include="..\Common\CSecurityPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="sources\CSMIMEPluginDLL.cp">
+    </None>
+    <None Include="sources\CSMIMEPluginDLL.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\..\Sources_Common\Plugins\SSL\loadsslfunc.cp">
+    </None>
+    <None Include="..\..\Sources_Common\Plugins\SSL\loadsslfunc.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
-    <CLCompile Include="..\Common\PluginDLLmain.cp">
+    </None>
+    <None Include="..\Common\PluginDLLmain.cp">
       <Filter>Source Files</Filter>
-    </CLCompile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources_Common\Plugins\SSL\CDLLFunctions.h">
