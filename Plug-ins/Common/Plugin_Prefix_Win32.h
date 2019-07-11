@@ -27,7 +27,9 @@
 #define _USE_32BIT_TIME_T
 #endif
 
+/* No longer necessary with modern Visual Studio
 #define snprintf _snprintf
+*/
 
 #include "stdafx.h"
 
