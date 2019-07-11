@@ -75,21 +75,33 @@
     <OutDir>Debug\</OutDir>
     <IntDir>Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>Release\</OutDir>
     <IntDir>Release\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -2519,68 +2531,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Sources\VCPP\mfcbits.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Plug-ins\CommunicatorAdbkIO\CommunicatorAdbkIO.vcxproj">
-      <Project>{44908954-e9bc-451a-948f-503c34c21459}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\CRAM-MD5\CRAM-MD5.vcxproj">
-      <Project>{2984b681-27ae-4ca2-8ac5-911f02d3ed71}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\DIGEST-MD5\DIGEST-MD5.vcxproj">
-      <Project>{30f10565-e2d7-43c5-ba6f-1e8008d2e9a1}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\Eudora4AdbkIO\Eudora4AdbkIO.vcxproj">
-      <Project>{271f7588-c3ae-4e19-b80a-253375154200}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\EudoraAdbkIO\EudoraAdbkIO.vcxproj">
-      <Project>{112e94b7-051a-4538-800d-c19a63df9a0a}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\GPG\GPG.vcxproj">
-      <Project>{2021acb1-9223-4445-8fb1-15f9fd43c9cc}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\NetscapeAdbkIO\NetscapeAdbkIO.vcxproj">
-      <Project>{4fa83df0-7e1f-40f0-8e56-a563d5b0c464}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\OEAdbkIO\OEAdbkIO.vcxproj">
-      <Project>{fe83f247-5b3f-4340-9199-837ada4a3dc8}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\PineAdbkIO\PineAdbkIO.vcxproj">
-      <Project>{c83d0e2d-8df5-4386-8e9c-31f16ab14834}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\PluginLibrary\PluginLib.vcxproj">
-      <Project>{0896b645-32a6-45a8-ae53-0184ef807aba}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\QuickmailAdbkIO\QuickmailAdbkIO.vcxproj">
-      <Project>{7f2ea713-8c9e-40fd-b8e9-a16fa100efb1}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\QuickmailProAdbkIO\QuickmailProAdbkIO.vcxproj">
-      <Project>{3067ee83-4924-4845-9555-a68e5c6a9aed}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\SMIME\SMIME.vcxproj">
-      <Project>{d49ffb27-5460-4b71-afe5-a4819614fe8f}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\SSL\SSL.vcxproj">
-      <Project>{09d392b6-adfb-4dbd-8b90-969ea87f4395}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="..\Plug-ins\vCardAdbkIO\vCardAdbkIO.vcxproj">
-      <Project>{4325a88c-9a90-4a39-8d18-54a7b30b5b0c}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

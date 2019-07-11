@@ -29,7 +29,9 @@
 
 #define TOWINCHAR(x)	cdustring(x)
 
+/*
 #define snprintf _snprintf
+*/
 
 //#define USE_FONTMAPPER
 
